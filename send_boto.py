@@ -2,6 +2,9 @@ import sys
 import boto
 import boto.s3
 
+# for debugging
+boto.set_stream_logger('boto')
+
 # AWS ACCESS DETAILS
 AWS_ACCESS_KEY_ID = ''
 AWS_SECRET_ACCESS_KEY = ''
