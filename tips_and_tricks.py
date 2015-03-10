@@ -14,3 +14,11 @@ iv = {'patt', 'matt', 'pitt', 'rick'}
 print(iv.intersection(vv))
 print(iv.difference(vv))
 print(iv.issubset(vv))
+
+# for else
+for v in vv:
+    if v.startswith('a'):
+        break
+else:
+    # if we don't reach the break, do this
+    print('never reached the break stmt')
