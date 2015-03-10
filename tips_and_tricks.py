@@ -22,3 +22,10 @@ for v in vv:
 else:
     # if we don't reach the break, do this
     print('never reached the break stmt')
+
+# conditional expressions
+g = 4
+n = g if g%3 else g-1
+m = None
+m = g if m is not None else 'gest'
+print('Hello, %s'%m)
