@@ -34,3 +34,9 @@ print('Hello, %s'%m)
 n = [i for i in range(10)]
 s = [x for x in n if x%2]
 t = [y if y%2 else y*2 for y in n]
+
+# generators
+# use them when you only need to loop
+# over the object once
+s = (x for x in n if x%2)
+print(s.next())
