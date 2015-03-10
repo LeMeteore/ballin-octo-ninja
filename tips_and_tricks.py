@@ -29,3 +29,8 @@ n = g if g%3 else g-1
 m = None
 m = g if m is not None else 'gest'
 print('Hello, %s'%m)
+
+# more complex list comprehension
+n = [i for i in range(10)]
+s = [x for x in n if x%2]
+t = [y if y%2 else y*2 for y in n]
