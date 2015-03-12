@@ -38,5 +38,17 @@ t = [y if y%2 else y*2 for y in n]
 # generators
 # use them when you only need to loop
 # over the object once
+n = [i for i in range(10)]
 s = (x for x in n if x%2)
-print(s.next())
+k = next(s)
+print(k)
+
+# dictionary comprehension
+teachers = {
+ 'Andy': 'English',
+ 'Joan': 'Maths',
+ 'Alice': 'Computer Science'
+    }
+
+subjects = {s: t for t, s in teachers.items()}
+print(subjects)
