@@ -61,3 +61,34 @@ for i,j in zip(n, z):
 
 y = dict(zip(n,z))
 print(y)
+
+# itertools
+from itertools import accumulate, chain, compress, dropwhile
+# x is an iterator
+print('accumulate')
+x = accumulate([1,2,3,4,5])
+print(next(x))
+print(next(x))
+
+# x is an iterator
+# takes * iterables and yield values
+# as if one iterable given
+print('chain')
+x= chain([1,2,3], [9,8,7])
+print(next(x))
+print(next(x))
+print(next(x))
+print(next(x))
+print(next(x))
+
+print('compress')
+data = [1,2,3,4,5,6,7,8,9]
+selector = [x%2 for x in data]
+z = compress(data, selector)
+#print(next(z))
+# list can take an iterator as argument
+print(list(z))
+
+print('dropwhile')
+mm = dropwhile(lambda y: y != 5, data)
+print(list(mm))
