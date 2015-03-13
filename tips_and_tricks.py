@@ -52,3 +52,12 @@ teachers = {
 
 subjects = {s: t for t, s in teachers.items()}
 print(subjects)
+
+# zip
+n = ('a', 'b', 'c', 'd', 'e')
+z = range(5)
+for i,j in zip(n, z):
+    print(i,j)
+
+y = dict(zip(n,z))
+print(y)
