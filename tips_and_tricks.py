@@ -92,3 +92,20 @@ print(list(z))
 print('dropwhile')
 mm = dropwhile(lambda y: y != 5, data)
 print(list(mm))
+
+# collections module
+print('defaultdict')
+from collections import defaultdict
+order = (
+    ('Mark', 'Steak'),
+    ('Andrew', 'Veggie Burger'),
+    ('James', 'Steak'),
+    ('Mark', 'Beer'),
+    ('Andrew', 'Beer'),
+    ('James', 'Wine'),
+    )
+
+group_order = defaultdict(list)
+for name, menu_item in order:
+    group_order[name].append(menu_item)
+print(group_order)
