@@ -128,3 +128,20 @@ def power(func):
 def plus(num):
     """add 1 to a number"""
     return num + 1
+
+
+# if we want to givean argument to our decorator
+# we should write the decorator function inside another function
+def power(pow):
+    """power is a function that return the _power decorator"""
+    def _power(func):
+        @wraps(func)
+        def _pow(num):
+            return func(num) ** pow
+        return _pow
+    return _power
+
+@power(7)
+def plus(num):
+    """add 1 to a number"""
+    return num + 1
