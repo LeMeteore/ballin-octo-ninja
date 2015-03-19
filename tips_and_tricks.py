@@ -109,3 +109,22 @@ group_order = defaultdict(list)
 for name, menu_item in order:
     group_order[name].append(menu_item)
 print(group_order)
+
+# decorators, again, and again
+
+# always use wraps when writing a decorator
+from functools import wraps
+
+# our decorator
+def power(func):
+    # wraps the decorated function
+    # to keep things like doc
+    @wraps(func)
+    def _pow(num):
+        return func(num) ** 4
+    return _pow
+
+@power
+def plus(num):
+    """add 1 to a number"""
+    return num + 1
