@@ -145,3 +145,24 @@ def power(pow):
 def plus(num):
     """add 1 to a number"""
     return num + 1
+
+
+# a more useful decorator,
+# with * and ** operators
+import webbrowser
+
+def cache(obj):
+    saved = obj.saved = {}
+    @wraps(obj)
+    # our decorator can take any number & kind of arguments
+    def memoizer(*args, **kwargs):
+        # retrieve all the keys
+        key = str(args) + str(kwargs)
+        # if key not in cache, process with function
+        if key not in saved: saved[key] = obj(*args, **kwargs)
+        return saved[key]
+    return memoizer
+
+@cache
+def web_lookup(url):
+    page = webbrowser.open(url)
